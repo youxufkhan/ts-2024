@@ -43,6 +43,9 @@ const throwError = (message: string): never => {
     throw new Error(message)
 }
 
+// -- -- -- 
+// Destructuring with Annotations
+
 const forecast = {
     date: new Date(),
     weather: 'Sunny'
@@ -53,9 +56,10 @@ const forecast = {
 //     console.log(forecast.weather)
 // }
 
-const logWeather = ({date, weather}: {date:Date, weather: string}): void => {
+const logWeather = ({ date, weather }: { date: Date, weather: string }): void => {
     console.log(date)
     console.log(weather)
 }
 
+//Notice how destructirng and annotations are two different structures in the function definition
 logWeather(forecast)
