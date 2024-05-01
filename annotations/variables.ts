@@ -51,7 +51,7 @@ let point: { x: number, y: number } = {
 //     console.log(i)
 // }
 
-const logNumber: (i: number) => void = (i: number) => { // (i: number) => void is the annotation here
+const logNumber: (i: number) => void = (i: number) => { // [(i: number) => void] is the annotation here
     console.log(i)
 }
 
@@ -119,7 +119,7 @@ console.log(coordinates) // {x:10, y:20}
 
 // Fixing Any Type 
 const json1 = '{"x": 10, "y": 20}'
-const coordinates1: {x:number, y:number} = JSON.parse(json1)
+const coordinates1: { x: number, y: number } = JSON.parse(json1)
 console.log(coordinates1) // {x:10, y:20}
 // coordinates1.abc // Property 'abc' does not exist on type '{ x: number; y: number; }'.ts(2339)
 
@@ -135,21 +135,21 @@ let words = ['red', 'green', 'blue']
 let foundWord; // Variable 'foundWord' implicitly has an 'any' type, but a better type may be inferred from usage.
 // let foundWord: boolean;
 
-for(let i = 0;i< words.length; i++){
-    if(words[i] === 'green'){
+for (let i = 0; i < words.length; i++) {
+    if (words[i] === 'green') {
         foundWord = true //let foundWord: any
     }
 }
 
 // When to use annotations
 // 3) Variable whose type cannot be infered correctly
-let numbers = [-10,-1,-12]
+let numbers = [-10, -1, -12]
 // let numbersAboveZero = false; // let numbersAboveZero: boolean
 let numbersAboveZero: boolean | number = false; // let numbersAboveZero: number | boolean
 
 for (let i = 0; i < numbers.length; i++) {
     const element = numbers[i];
-    if(element > 0){
+    if (element > 0) {
         numbersAboveZero = numbers[i] // Type 'number' is not assignable to type 'boolean'.ts(2322)
     }
 }
