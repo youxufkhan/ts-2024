@@ -42,3 +42,20 @@ const logger = (message: string): void => { //void return type functions can als
 const throwError = (message: string): never => {
     throw new Error(message)
 }
+
+const forecast = {
+    date: new Date(),
+    weather: 'Sunny'
+}
+
+// const logWeather = (forecast: {date:Date, weather: string}): void => {
+//     console.log(forecast.date)
+//     console.log(forecast.weather)
+// }
+
+const logWeather = ({date, weather}: {date:Date, weather: string}): void => {
+    console.log(date)
+    console.log(weather)
+}
+
+logWeather(forecast)
