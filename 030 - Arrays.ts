@@ -57,4 +57,9 @@ carMakers.map((car: string): string => {
 // const importantDates = [ new Date(), '2030-10-10' ] //const importantDates: (string | Date)[]
 //                                                         ^ Type inference
 
-const importantDates : (Date | String)[] = [ new Date(), '2030-10-10'] // Type annotation
+const importantDates: (Date | String)[] = [new Date()] // Type annotation
+
+
+importantDates.push('2030-10-10');
+importantDates.push(new Date());
+// importantDates.push(100); //Argument of type 'number' is not assignable to parameter of type 'String | Date'.ts(2345)
