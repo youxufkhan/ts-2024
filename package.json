@@ -9,6 +9,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@faker-js/faker": "^8.4.1",
+    "@types/google.maps": "^3.55.8",
     "axios": "^1.6.8"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.5"
   }
 }
