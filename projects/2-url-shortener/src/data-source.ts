@@ -1,17 +1,17 @@
 import "reflect-metadata"
 import { DataSource } from "typeorm"
-import { User } from "./entity/Url"
+import { Url } from "./entity/Url"
 
 export const AppDataSource = new DataSource({
     type: "postgres",
-    host: "localhost",
+    host: process.env.DB_HOST,
     port: 5432,
-    username: "docker",
-    password: "docker",
-    database: "url-shortener",
+    username: process.env.DB_USER,
+    password: process.env.DB_PW,
+    database: process.env.DB_NAME,
     synchronize: true,
     logging: false,
-    entities: [User],
+    entities: [Url],
     migrations: [],
     subscribers: [],
 })
